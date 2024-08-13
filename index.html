@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Natural Numbers Calculator</title>
+    <meta name="author" content="Rohan Gautam 22BCE10658">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.2); /* Glass-like effect */
+            padding: 0.5vh;
+            text-align: center;
+            border: 0.7vh solid rgb(141, 141, 141);
+            border-radius: 50vw; /* Capsule shape */
+            box-shadow: 0 0 5vh rgba(205, 135, 135, 0.7);
+            margin: 2vh auto;
+            max-width: 90vw;
+            color: rgb(255, 191, 0);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.5); /* Transparent footer */
+            font-size: 2vh;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+        }
+
+        .container {
+            max-width: 80vw;
+            margin: 10vh auto;
+            padding: 2vh 2vw;
+            background-color: rgba(255, 255, 255, 0.1); /* Slight transparency */
+            box-shadow: 0 0 3vh rgb(214, 214, 214);
+            border-radius: 4vw;
+            color: rgb(255, 191, 0);
+            text-align: center;
+        }
+
+        .spacer {
+            height: 10vh;
+        }
+
+        .calculator {
+            margin-top: 2vh;
+            padding: 2vh;
+            background-color: rgba(255, 255, 255, 0.2); /* Slight transparency */
+            border-radius: 4vw;
+            
+        }
+
+        input[type="number"] {
+            padding: 0.5vh;
+            background-color: rgb(232, 202, 162);
+            font-size: 2.5vh;
+            color: white;
+            margin-right: 1vw;
+        }
+
+        button {
+            padding: 0.5vh 1vw;
+            
+            font-size: 2.5vh;
+            cursor: pointer;
+        }
+
+        p#result {
+            margin-top: 1vh;
+            color: rgb(255, 232, 60);
+            font-size: 4vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sum of Natural Numbers Calculator</h1>
+    </header>
+
+    <div class="container">
+        <!-- Sum of Natural Numbers Calculator -->
+            <p style="color: rgb(255, 255, 255); font-size: 3vh;">Enter a number and click "Calculate" to find the sum of natural numbers up to that number.</p>
+            <input style="color: black;" type="number" id="numberInput" placeholder="Enter a number" />
+            <button onclick="calculateSum()">Calculate</button>
+            <p id="result"></p>
+        
+    </div>
+
+    <div class="spacer"></div>
+
+    <footer>
+        <p>&copy; Rohan Gautam 22BCE10658</p>
+    </footer>
+
+    <script>
+        function calculateSum() {
+            const numberInput = document.getElementById('numberInput').value;
+            const number = parseInt(numberInput);
+
+            if (isNaN(number) || number <= 0) {
+                document.getElementById('result').innerText = 'Please enter a positive integer.';
+                return;
+            }
+
+            let sum = 0;
+            for (let i = 1; i <= number; i++) {
+                sum += i;
+            }
+
+            document.getElementById('result').innerText = `The sum of natural numbers up to ${number} is ${sum}.`;
+        }
+    </script>
+</body>
+</html>
